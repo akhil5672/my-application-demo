@@ -23,7 +23,7 @@ node {
         nexusArtifactUploader(
         nexusVersion: 'nexus3',
         protocol: 'http',
-        nexusUrl: '18.218.31.0:8081/',
+        nexusUrl: '3.148.194.94:8081/',
         groupId: 'myGroupId',
         version: '1.0-SNAPSHOT',
         repository: 'maven-snapshots',
@@ -39,7 +39,7 @@ node {
    
    stage ('DEV Deploy')  {
       echo "deploying to DEV Env "
-      deploy adapters: [tomcat9(credentialsId: '452e77a1-3214-4231-8469-63591565d19c', path: '', url: 'http://3.16.81.232:8080')], contextPath: null, war: '**/*.war'
+      deploy adapters: [tomcat9(credentialsId: '452e77a1-3214-4231-8469-63591565d19c', path: '', url: 'http://18.119.114.25:8080')], contextPath: null, war: '**/*.war'
 
     }
 
@@ -56,7 +56,7 @@ node {
 
 stage ('QA Deploy')  {
      echo "deploying into QA Env " 
-deploy adapters: [tomcat9(credentialsId: '452e77a1-3214-4231-8469-63591565d19c', path: '', url: 'http://3.16.81.232:8080')], contextPath: null, war: '**/*.war'
+deploy adapters: [tomcat9(credentialsId: '452e77a1-3214-4231-8469-63591565d19c', path: '', url: 'http://18.119.114.25:8080')], contextPath: null, war: '**/*.war'
 
 }
 
@@ -73,7 +73,7 @@ stage ('QA Approve')  {
 
 stage ('PROD Deploy')  {
      echo "deploying into PROD Env " 
-deploy adapters: [tomcat9(credentialsId: '452e77a1-3214-4231-8469-63591565d19c', path: '', url: 'http://3.16.81.232:8080')], contextPath: null, war: '**/*.war'
+deploy adapters: [tomcat9(credentialsId: '452e77a1-3214-4231-8469-63591565d19c', path: '', url: 'http://18.119.114.25:8080')], contextPath: null, war: '**/*.war'
 
 }
 }
